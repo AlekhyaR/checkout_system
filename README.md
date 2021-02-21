@@ -4,7 +4,7 @@ Hi Team, in this repository I want to share my solution to the Ruby Code Challen
 
 ## Checkout System design 
 
-![Image of Class Diagram](https://github.com/AlekhyaR/merchant_payment_system/blob/master/images/checkout_system_design.png)
+(https://github.com/AlekhyaR/checkout_system/blob/master/images/checkout_system_design.png)
 
 This is the system design that I chose to solve the exercise. With this architecture it is possible to connect to a database and extend the store with more products or rules in a quick and easy way. The exercise is composed of the following classes:
 
@@ -28,21 +28,21 @@ This class is associated with one checkout process. Each object from this class 
 
 ### Rules
 
-Departments are creating different discounts to implement in the store. Each promotion rule corresponds to one specific class, all of these classes must have a special characteristic and an ```apply``` method. This method will update the item's price depending on the values, rules and structure for each discount. The next rules are implemented in this repository:
+Departments are creating different discounts to implement in the store. Each promotion rule corresponds to one specific class, all of these classes must have a special characteristic and an ```apply``` method. This method will update the item's price or total amount depending on the values, rules and structure for each discount. The next rules are implemented in this repository:
 
-1. **Discount rule:** If the checkout process has two or more Lavendar Heart items, it will drop the items price to £8.50 to each of them.
+1. **Discount rule:** If the checkout process has two or more Lavendar Heart items, then item's price drops to £8.50 on each of item.
  
-2. **Percent Dsicount rule:** If the checkout process total amount spend over £60, then you get 10% of your purchase.
+2. **Percent Discount rule:** If the checkout process total amount spend over £60, then you get 10% of your purchase.
 
-3. **Buy Two Get one rule:** On '002' item, pay one take another for free.
+3. **Buy Two Get One rule:** On any item, pay one and take another for free will be applicable
 
 ### Checkout
 
 Checkout class is where the magic happens, this class has a special initialize method that receives a variable number of pricing rules. In this method the checkout process creates the initial products for checkout process Store and builds a store object with them. Each checkout object has a set of items as an array. With this special configuration we can control the price for each item depending on the rules given to checkout's constructor. ```scan``` method makes a validation for the product code returning ```true```or ```false``` when searching for the product code in the store. ```total``` method calls each rule's ```apply``` method to update items price and discount on total amount spend, this will vary according to each rule configuration.
 
-## Unit Test Using Rspec
+## Testing - Rspec
 
-This is production ready code, therefore I decided to include some unit test cases that you can check in the test folder for each class.
+This is production ready code, therefore I decided to include some unit test cases that you can check in the spec folder for each class.
 
 ## CLI
 

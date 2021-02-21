@@ -1,10 +1,10 @@
-# Solution to CHECKOUT SYSTEM
+# Solution to Checkout System
 
 Hi Team, in this repository I want to share my solution to the Ruby Code Challenge. Here you will find some explanations and considerations about the code.
 
-## Checkout System design 
+## Checkout System design decisions
 
-(https://github.com/AlekhyaR/checkout_system/blob/master/images/checkout_system_design.png)
+![design decision diagram](https://github.com/AlekhyaR/checkout_system/blob/master/images/checkout_system_design.png)
 
 This is the system design that I chose to solve the exercise. With this architecture it is possible to connect to a database and extend the store with more products or rules in a quick and easy way. The exercise is composed of the following classes:
 
@@ -30,7 +30,7 @@ This class is associated with one checkout process. Each object from this class 
 
 Departments are creating different discounts to implement in the store. Each promotion rule corresponds to one specific class, all of these classes must have a special characteristic and an ```apply``` method. This method will update the item's price or total amount depending on the values, rules and structure for each discount. The next rules are implemented in this repository:
 
-1. **Discount rule:** If the checkout process has two or more Lavendar Heart items, then item's price drops to £8.50 on each of item.
+1. **Discount rule:** If the checkout process has two or more Lavendar Heart items, then it's price drops to £8.50 for each item.
  
 2. **Percent Discount rule:** If the checkout process total amount spend over £60, then you get 10% of your purchase.
 

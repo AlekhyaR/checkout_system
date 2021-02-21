@@ -18,7 +18,7 @@ end
 @rule_one = DiscountRule.new('001', 2, '£8.50')
 @rule_two = PercentDiscountRule.new('£60', 0.1)
 @rule_three = BuyTwoGetOneRule.new('002')
-@checkout = Checkout.new([@rule_one])
+@checkout = Checkout.new([@rule_one, @rule_two])
 # Uncomment the next line if you want to include the additional rule Buy Two Get One Product rule
 # @checkout = Checkout.new([ @rule_one, @rule_two, @rule_three ])
 @store = @checkout.store
@@ -60,7 +60,7 @@ while option != 6
     puts 'Please enter name:'
     prompt
     name = gets.chomp
-    puts 'Please enter price:'
+    puts 'Please enter price: as eg: 23.23 (float value)'
     prompt
     price = gets.chomp.to_f
 

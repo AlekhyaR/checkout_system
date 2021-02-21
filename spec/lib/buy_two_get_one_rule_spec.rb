@@ -1,6 +1,6 @@
 describe BuyTwoGetOneRule do
   describe '#initialize' do
-    let(:rule) { BuyTwoGetOne.new('002') }
+    let(:rule) { BuyTwoGetOneRule.new('002') }
     let(:checkout) { Checkout.new([rule]) }
     let(:store) { checkout.store }
 

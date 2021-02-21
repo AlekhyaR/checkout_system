@@ -12,7 +12,7 @@ class Store
   end
 
   def add_product(code, name, price)
-    product = Product.new(code, name, price)
+    product = Product.new(code, name, Numeric.add_currency(price))
     @inventory[code.to_sym] = product
   end
 

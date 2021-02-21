@@ -19,7 +19,7 @@ describe Store do
 
   context 'test store creates a new product' do
     before do 
-      store.add_product('004', 'sample product', '£23.02')
+      store.add_product('004', 'sample product', 23.02)
     end
     let(:product) { store.find("004") }
 
